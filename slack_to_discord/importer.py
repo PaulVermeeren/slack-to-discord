@@ -579,6 +579,6 @@ def run_import(*, zipfile, token, **kwargs):
 
         __log__.info("Logging the bot into Discord")
         client = SlackImportClient(data_dir=t, **kwargs)
-        client.run(token, reconnect=False, log_handler=None)
+        client.run(token, trust_env=True, reconnect=False, log_handler=None)
         if client._exception:
             raise client._exception
